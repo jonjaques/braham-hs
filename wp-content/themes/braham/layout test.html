@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+//link to the CSS files for this menu type
+<link rel="stylesheet" type="text/css" media="screen" href="superfish.css" />
+
+// link to the JavaScript files (hoverIntent is optional)
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/supersubs.js"></script>
+
+// initialise Superfish
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("ul.sf-menu").supersubs({
+			minWidth:    12,   // minimum width of sub-menus in em units
+			maxWidth:    27,   // maximum width of sub-menus in em units
+			extraWidth:  1     // extra width can ensure lines don't sometimes turn over
+                               // due to slight rounding differences and font-family
+		}).superfish();  // call supersubs first, then superfish, so that subs are
+                         // not display:none when measuring. Call before initialising
+                         // containing tabs for same reason.
+	});
+
+</script>
+</head>
+
+<body>
+<ul>
+    <li><a href="#">One</a></li>
+    <li><a href="#">Two</a>
+        <ul>
+            <li><a href="#">Sub One</a></li>
+            <li><a href="#">Sub Two</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Three</a></li>
+</ul>
+</body>
+</html>
